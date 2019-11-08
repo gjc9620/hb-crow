@@ -18,18 +18,26 @@ function createSend(opt = {}) {
   } = opt;
   
   return async function sendLog(logData = {}, context) {
-    const hbKeyword = logData.keyword;
-    delete logData.keyword;
+    const hbmaster = logData.keyword;
     
-    try {
-      send({
+    const data = {
+      keyword: 'clickButton',
+      buttonName: hbmaster,
+      pageId: 'hb-crow',
+      categoryId: 'hb-crow',
+      additionType: 'hb-crow',
+      additionValue: {
+        hbmaster,
         ...logData,
-        hbKeyword,
         context,
         localTime: now(),
         localTimestamp: +new Date(),
         page_url: await getPageUrl().then((...args) => args).catch(''),
-      });
+      }
+    };
+    
+    try {
+      send(data);
     } catch (e) {
       send({
         keyword: 'crowError',
