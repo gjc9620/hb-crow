@@ -18,9 +18,13 @@ function createSend(opt = {}) {
   } = opt;
   
   return async function sendLog(logData = {}, context) {
+    const hbKeyword = logData.keyword;
+    delete logData.keyword;
+    
     try {
       send({
         ...logData,
+        hbKeyword,
         context,
         localTime: now(),
         localTimestamp: +new Date(),
