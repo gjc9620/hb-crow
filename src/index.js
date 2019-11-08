@@ -24,7 +24,7 @@ function createSend(opt = {}) {
         context,
         localTime: now(),
         localTimestamp: +new Date(),
-        page_url: await getPageUrl().then(...args => args).catch(''),
+        page_url: await getPageUrl().then((...args) => args).catch(''),
       });
     } catch (e) {
       send({
