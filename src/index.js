@@ -1,5 +1,3 @@
-
-
 function now() {
   const d = new Date();
   return `${[
