@@ -1,0 +1,55 @@
+{
+  "name": "hb-crow",
+  "version": "0.0.8",
+  "description": "🤪hb-crow",
+  "browserslist": [
+    "cover 99.5%",
+    "maintained node versions",
+    "ie 6-8",
+    "Safari >= 7",
+    "iOS >= 7",
+    "Firefox > 20",
+    "Chrome > 50",
+    "not dead"
+  ],
+  "main": "lib/index",
+  "module": "es/index",
+  "jsnext:main": "es/index",
+  "scripts": {
+    "build:es": "rm -rf ./es/* && BABEL_ENV=es npx babel ./src --out-dir ./es --source-maps inline",
+    "build:cjs": "rm -rf ./lib/* && BABEL_ENV=cjs npx babel ./src --out-dir ./lib --source-maps inline",
+    "build": "npm run build:es && npm run build:cjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gjc9620/hb-crow.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gjc9620/hb-crow/issues"
+  },
+  "homepage": "https://github.com/gjc9620/hb-crow#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.2.0",
+    "@babel/core": "^7.2.0",
+    "@babel/plugin-proposal-class-properties": "^7.2.3",
+    "@babel/plugin-transform-runtime": "^7.2.0",
+    "@babel/preset-env": "^7.2.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^23.6.0",
+    "babel-loader": "^8.0.4",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^2.1.0",
+    "eslint": "^5.9.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.11.1"
+  },
+  "dependencies": {
+    "@babel/runtime-corejs2": "^7.2.0"
+  }
+}
