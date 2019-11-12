@@ -13,8 +13,6 @@
     "not dead"
   ],
   "main": "lib/index",
-  "module": "es/index",
-  "jsnext:main": "es/index",
   "scripts": {
     "build:es": "rm -rf ./es/* && BABEL_ENV=es npx babel ./src --out-dir ./es --source-maps inline",
     "build:cjs": "rm -rf ./lib/* && BABEL_ENV=cjs npx babel ./src --out-dir ./lib --source-maps inline",
