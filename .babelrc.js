@@ -12,7 +12,6 @@ module.exports = {
       {
         modules: isESM ? false : 'commonjs',
         "targets": {
-          "esmodules": isESM,
           "browsers": package.browserslist,
         }
       }
