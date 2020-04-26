@@ -6,14 +6,10 @@ const isESM = BABEL_ENV === 'es';
 
 module.exports = {
   "presets": [
-    "@babel/preset-react",
     [
       "@babel/preset-env",
       {
-        modules: isESM ? false : 'commonjs',
-        "targets": {
-          "browsers": package.browserslist,
-        }
+        modules: false,
       }
     ]
   ],
@@ -22,10 +18,9 @@ module.exports = {
     [
       "@babel/plugin-transform-runtime",
       {
-        "corejs": 2,
-        "helpers": true,
+        "corejs": false,
+        "helpers": false,
         "regenerator": true,
-        "useESModules": isESM
       }
     ]
   ]
